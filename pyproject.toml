@@ -1,0 +1,14 @@
+[project]
+name = "source-line-extractor"
+version = "0.1.0"
+description = "Extracts and numbers lines from a source file given a start, end, and optional context window."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
