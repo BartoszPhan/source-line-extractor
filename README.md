@@ -31,3 +31,10 @@ Line numbers are 1-based and inclusive at both ends. Context is clamped to the f
 - `ExtractedLine` — a frozen dataclass with `number`, `text`, and `in_selection`
 
 `ExtractedLine` is available from `source_line_extractor.core`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
